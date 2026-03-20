@@ -16,7 +16,7 @@ const failingExtractor = {
 
 const workingExtractor = {
   name: 'working',
-  extract: async () => [{ id: 'toons-test', url: 'https://original.example.com/stream' }],
+  extract: async () => [{ id: 'ntv-test', url: 'https://original.example.com/stream' }],
 };
 
 describe('refresh (CACHE-01, CACHE-02, CACHE-03)', () => {
@@ -29,7 +29,7 @@ describe('refresh (CACHE-01, CACHE-02, CACHE-03)', () => {
     assert.ok(store, 'store.js not found');
     assert.equal(typeof refresh.refreshWith, 'function', 'refresh.refreshWith must be a function');
     await refresh.refreshWith([workingExtractor], stubResolveUrl);
-    assert.ok(store.get('toons-test') !== null, 'store should have entry for toons-test after refresh');
+    assert.ok(store.get('ntv-test') !== null, 'store should have entry for ntv-test after refresh');
   });
 
   test('CACHE-02: refreshWith stores the resolveUrlFn return value, not the original extractor URL', async () => {
@@ -37,7 +37,7 @@ describe('refresh (CACHE-01, CACHE-02, CACHE-03)', () => {
     assert.ok(store, 'store.js not found');
     await refresh.refreshWith([workingExtractor], stubResolveUrl);
     assert.equal(
-      store.get('toons-test'),
+      store.get('ntv-test'),
       'https://resolved.example.com/final.m3u8',
       'stored URL must be the resolveUrlFn return value'
     );
@@ -48,7 +48,7 @@ describe('refresh (CACHE-01, CACHE-02, CACHE-03)', () => {
     assert.ok(store, 'store.js not found');
     await refresh.refreshWith([failingExtractor, workingExtractor], stubResolveUrl);
     assert.ok(
-      store.get('toons-test') !== null,
+      store.get('ntv-test') !== null,
       'working extractor result should be in store despite failing extractor'
     );
   });
@@ -67,7 +67,7 @@ describe('refresh (CACHE-01, CACHE-02, CACHE-03)', () => {
     const throwingResolve = async () => { throw new Error('Parse Error: Content-Length can\'t be present with Transfer-Encoding'); };
     await refresh.refreshWith([workingExtractor], throwingResolve);
     assert.equal(
-      store.get('toons-test'),
+      store.get('ntv-test'),
       'https://original.example.com/stream',
       'should fall back to original extractor URL when resolve fails'
     );

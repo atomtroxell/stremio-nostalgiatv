@@ -89,7 +89,7 @@ describe('addon CACHE-04: store-filtered catalog and stream lookup', () => {
     assert.equal(result.streams.length, 1, 'should return 1 stream for channel in store');
     assert.equal(result.streams[0].url, 'https://swimrewind.com/hls/stream.m3u8');
     assert.ok(result.streams[0].title, 'stream must have a title');
-    assert.equal(result.cacheMaxAge, 0);
+    assert.equal(result.cacheMaxAge, 0, 'cacheMaxAge must be 0');
   });
 
   test('streamHandler returns { streams: [], cacheMaxAge: 0 } for a channel NOT in the store (CACHE-04)', async () => {
@@ -100,7 +100,7 @@ describe('addon CACHE-04: store-filtered catalog and stream lookup', () => {
     assert.ok(result && typeof result === 'object', 'result must be an object');
     assert.ok(Array.isArray(result.streams), 'result.streams must be an array');
     assert.equal(result.streams.length, 0, 'should return empty streams for channel not in store');
-    assert.equal(result.cacheMaxAge, 0);
+    assert.equal(result.cacheMaxAge, 0, 'cacheMaxAge must be 0');
   });
 });
 

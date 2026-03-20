@@ -2,7 +2,7 @@
 
 const BASE_URL = process.env.BASE_URL || `http://127.0.0.1:${process.env.PORT || 7000}`;
 
-// Static addon manifest declaration.
+// Static addon manifest declaration
 //
 // CRITICAL: idPrefixes MUST be a non-empty array.
 // Setting it to null, undefined, or [] causes Android clients to lose
