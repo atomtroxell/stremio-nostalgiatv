@@ -16,7 +16,7 @@ module.exports = {
   id: 'com.ntv.livetv',
   version: '1.0.0',
   name: 'Nostalgia TV',
-  description: 'Nostalgic live TV — retro cartoons, classic shows, and music channels from the 90s and 2000s',
+  description: 'Nostalgia TV: Live retro cartoons, classic shows, and music channels from the 90s and 2000s.',
   resources: ['catalog', 'meta', 'stream'],
   types: ['tv'],
   idPrefixes: ['ntv-'],
