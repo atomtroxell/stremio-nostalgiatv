@@ -1,0 +1,21 @@
+{
+  "name": "Nostalgia TV",
+  "short_name": "NTV",
+  "description": "Live retro cartoons, classic shows, and music channels from the 90s and 2000s — free Stremio addon.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#080808",
+  "theme_color": "#ffb100",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
