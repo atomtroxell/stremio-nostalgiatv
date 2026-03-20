@@ -98,48 +98,6 @@
       z-index: 999;
     }
 
-    /* ambient glow blobs */
-    .bg-glow {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .bg-glow span {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.12;
-    }
-
-    .bg-glow .g1 {
-      width: 600px;
-      height: 600px;
-      background: var(--gold);
-      top: -200px;
-      left: -150px;
-    }
-
-    .bg-glow .g2 {
-      width: 500px;
-      height: 500px;
-      background: var(--blue);
-      bottom: -150px;
-      right: -100px;
-    }
-
-    .bg-glow .g3 {
-      width: 350px;
-      height: 350px;
-      background: var(--red);
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.07;
-    }
-
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -161,23 +119,11 @@
       margin-bottom: 2.5rem;
     }
 
-    .logo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -30px;
-      background: radial-gradient(ellipse at center,
-          rgba(255, 177, 0, 0.18) 0%,
-          transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
     .logo-wrap img {
       width: clamp(160px, 28vw, 220px);
       height: auto;
       display: block;
       position: relative;
-      filter: drop-shadow(0 4px 32px rgba(255, 177, 0, 0.25));
     }
 
     /* heading */
@@ -239,11 +185,6 @@
     .btn-primary {
       background: var(--gold);
       color: #000;
-      box-shadow: 0 4px 24px rgba(255, 177, 0, 0.3);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 6px 32px rgba(255, 177, 0, 0.45);
     }
 
     .btn-ghost {
@@ -468,7 +409,6 @@
       50% {
         opacity: 1;
         background: #4caf50;
-        box-shadow: 0 0 4px #4caf50;
       }
     }
 
@@ -479,7 +419,7 @@
       margin: 0 2rem 5rem;
       border: 1px solid rgba(255, 177, 0, 0.2);
       border-radius: 4px;
-      background: linear-gradient(135deg, rgba(255, 177, 0, 0.06) 0%, transparent 60%);
+      background: var(--card);
       padding: 3rem 2rem;
       text-align: center;
       max-width: 700px;
@@ -566,12 +506,6 @@
 </head>
 
 <body>
-
-  <div class="bg-glow" aria-hidden="true">
-    <span class="g1"></span>
-    <span class="g2"></span>
-    <span class="g3"></span>
-  </div>
 
   <section class="hero">
     <div class="logo-wrap">
